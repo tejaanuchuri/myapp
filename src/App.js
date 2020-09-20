@@ -1,11 +1,10 @@
-import React, { createElement } from 'react';
+import React, { Component} from 'react';
 import './App.css';
 
-function App() {
-  render(){
-    return React.createElement('div',className={'App'},React.createElement('h1',className={'App-child'},'Hello Teja...!'));
+class App extends Component {
+  render() {
+    return React.createElement('div',{className:'App'},'Hello Teja...!');
   }
 }
 
 export default App;
-createElemen
