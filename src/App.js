@@ -10,6 +10,7 @@ class App extends Component {
       <p> This is Really Cool..! </p>
       <Person/>
       <Person/>
+      <Person/>    
       </div>
     ); 
   }
