@@ -49,9 +49,9 @@ namechangeHandler =(event) => {
     if(this.state.showPerson){
       person = (
         <div>
-          <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} />
-          <Person name ={this.state.person[1].name} />
-          <Person name ={this.state.person[2].name} changed = {this.namechangeHandler} />    
+          {this.state.person.map(p => {
+            return <Person name={p.name} changed = {this.namechangeHandler}/>
+          })}   
         </div>
       );
     }
