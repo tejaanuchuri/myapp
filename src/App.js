@@ -33,11 +33,17 @@ namechangeHandler =(event) => {
   })
 }
   render(){
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border : '1px solid blue',
+      padding : '8px'
+    };
     return(
       <div className="App">
         <h1> Hi, I'm React App </h1>
         <p> This is Really Cool..! </p>
-      <button onClick={this.switchNameHandler.bind(this,'kiduo')}>Switch Name</button>
+      <button style ={style} onClick={this.switchNameHandler.bind(this,'kiduo')}>Switch Name</button>
       <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} />
        <Person name ={this.state.person[1].name} />
       <Person name ={this.state.person[2].name} changed = {this.namechangeHandler} />    
