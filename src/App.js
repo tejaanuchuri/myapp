@@ -26,8 +26,8 @@ switchNameHandler = (newName) => {
 namechangeHandler =(event) => {
   this.setState({
     person : [
-      { name: event.target.value },
-      { name: event.target.value },
+      { name:'ramana'},
+      { name:'rajitha'},
       { name: event.target.value}
     ]
   })
@@ -38,8 +38,8 @@ namechangeHandler =(event) => {
         <h1> Hi, I'm React App </h1>
         <p> This is Really Cool..! </p>
       <button onClick={this.switchNameHandler.bind(this,'kiduo')}>Switch Name</button>
-      <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} changed = {this.namechangeHandler}/>
-      <Person name ={this.state.person[1].name} changed = {this.namechangeHandler} />
+      <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} />
+       <Person name ={this.state.person[1].name} />
       <Person name ={this.state.person[2].name} changed = {this.namechangeHandler} />    
       </div>
     );
