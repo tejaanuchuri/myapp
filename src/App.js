@@ -44,19 +44,23 @@ namechangeHandler =(event) => {
       border : '1px solid blue',
       padding : '8px'
     };
+
+    let person = null;
+    if(this.state.showPerson){
+      person = (
+        <div>
+          <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} />
+          <Person name ={this.state.person[1].name} />
+          <Person name ={this.state.person[2].name} changed = {this.namechangeHandler} />    
+        </div>
+      );
+    }
     return(
       <div className="App">
         <h1> Hi, I'm React App </h1>
         <p> This is Really Cool..! </p>
       <button style ={style} onClick={this.togglePersonHandler}>Switch Name</button>
-      {
-        this.state.showPerson === true ?
-        <div>
-          <Person name={this.state.person[0].name} click = {this.switchNameHandler.bind(this,'gojenjiii')} />
-          <Person name ={this.state.person[1].name} />
-          <Person name ={this.state.person[2].name} changed = {this.namechangeHandler} />    
-        </div> : null
-      }
+      {person}
       </div>
     );
   }
