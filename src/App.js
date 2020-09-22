@@ -24,6 +24,12 @@ switchNameHandler = (newName) => {
     showPerson : false
   })
 }
+
+deletePersonHandler = (personIndex) =>{
+  const person = this.state.person;
+  person.splice(personIndex,1);
+  this.setState({person:person})
+}
 namechangeHandler =(event) => {
   this.setState({
     person : [
@@ -33,6 +39,7 @@ namechangeHandler =(event) => {
     ]
   })
 }
+  
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
@@ -49,8 +56,8 @@ namechangeHandler =(event) => {
     if(this.state.showPerson){
       person = (
         <div>
-          {this.state.person.map(p => {
-            return <Person name={p.name} changed = {this.namechangeHandler}/>
+          {this.state.person.map((p,index) => {
+            return <Person click ={this.deletePersonHandler(index)} name={p.name} changed = {this.namechangeHandler}/>
           })}   
         </div>
       );
