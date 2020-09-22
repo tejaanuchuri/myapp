@@ -26,8 +26,9 @@ switchNameHandler = (newName) => {
 }
 
 deletePersonHandler = (personIndex) =>{
-  const person = this.state.person;
-  person.splice(personIndex,1);
+  //const person = this.state.person.slice(); // use slice apporach
+  const person = [...this.state.person];     // use spread operator
+  person.splice(personIndex,1);         
   this.setState({person:person})
 }
 namechangeHandler =(event) => {
