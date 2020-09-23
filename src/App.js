@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
-
+import Radium from 'radium'
 class App extends Component{
   state = ({
     person: [
@@ -55,7 +55,12 @@ namechangeHandler =(event,id) => {
       color: 'white',
       font: 'inherit',
       border : '1px solid blue',
-      padding : '8px'
+      padding : '8px',
+      cursor : 'pointer',
+      ':hover': {
+        backgroundColor:'blue',
+        color: 'white'
+      }
     };
 
     let person = null;
@@ -72,6 +77,10 @@ namechangeHandler =(event,id) => {
         </div>
       );
        style.backgroundColor = 'blue';
+       style[':hover'] = {
+         backgroundColor: 'lightgreen',
+         color:'black'
+       }
     }
 
     let classes = [];
@@ -93,6 +102,6 @@ namechangeHandler =(event,id) => {
   }
 }
 
-export default App;
+export default Radium(App);
 
 
